@@ -68,7 +68,58 @@ let t = [4, 78, 715, -99];
 
 
 
+    let szam = 56;
+
+    class Kutya {
+        nev = 'Bodri';
+        constructor(){
+            Math.random();
+        }
+    }
+
+
+
+    // Nellékhatás - side effect
+
+    1+1;
+    Math.sqrt(1*2 /4);
+    [1,2,3].filter(e => e > 2);
+    78 > 2;
+    [56, 33].includes(szam);
+    new Date();
+    new Kutya();
     
+    // Van mellékhatás (például):
+    console.log('hello');
+    let a = szam++;
+    let b = ++szam;
+    t.push(45);
+    t.sort();
+    console.log(a, b);
+    console.log(t);
+    Math.random();
+
+
+    // Tiszta függvény - pure function
+    function kettonelNagyobb(t) {
+        return t.filter(e => e > 2);
+    }
+
+    // Nem tiszta console.log() mellékhatás 
+        function kettonelNagyobb(t) {
+            t.forEach(q => console.log(q));
+        }
+
+        // Nem tiszta - a document nem, paraméter v. lokális változó
+    function getButtonColor(){
+        return document.getElementById('szinezes').style.backgroundColor;
+    }
+
+    // Nem tiszta 
+    function getDeteAsString(){
+        return (new Date()).toISOString();
+    }
+     
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Page Loaded');
