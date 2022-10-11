@@ -17,7 +17,58 @@ document.addEventListener('DOMContentLoaded',  function (){
 */
 
 
-//  = 
+
+
+// rendezés a '>' -k  megváltoztatása esetén csökkenő osrrend
+let t = [4, 78, 715, -99];
+/* t.sort((a, b) => {
+    if(a < b){
+     return -1;
+    } else if(a > b){
+        return 1;
+    }else{
+        return 0;
+    }
+    });*/
+
+
+    //  = 
+    
+    t.sort((a, b) => {return a - b});
+    
+    console.log(t);
+    
+
+
+    // új tömbbe válogat ki
+    console.log(t.filter((e) => { return e > 0}));
+    // =   opcinoális 1 paraméter esetén:
+    console.log(t.filter(e => e > 0));
+
+    //abszolutertek> 50
+    
+    console.log(t.filter(e => Math.abs(e) > 50));
+
+    t = t.map(e => e*e);
+    console.log(t);
+
+
+
+
+    t = t.map(e => e.toFixed(2));
+    console.log(t);
+
+
+
+
+    t.forEach((e, i) => {
+        console.log(i, e);
+    });
+
+
+
+
+    
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Page Loaded');
